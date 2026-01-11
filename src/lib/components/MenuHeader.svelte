@@ -5,7 +5,15 @@
             Menu de la semaine
         </h1>
         <p class="text-[#e6a515] font-bold text-2xl text-center">
-            Semaine du {new Date().toLocaleDateString('fr-FR', { day: '2-digit' })} au {new Date(Date.now() + 4 * 24 * 60 * 60 * 1000).toLocaleDateString('fr-FR', { day: '2-digit', month: 'long' })}
+            Semaine du {(() => {
+                const d = new Date();
+                d.setDate(d.getDate() + ((1 + 7 - d.getDay()) % 7));
+                return d.toLocaleDateString('fr-FR', { day: '2-digit' });
+            })()} au {(() => {
+                const d = new Date();
+                d.setDate(d.getDate() + ((1 + 7 - d.getDay()) % 7) + 4);
+                return d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'long' });
+            })()}
         </p>
     </div>
 </div>
