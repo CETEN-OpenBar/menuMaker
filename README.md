@@ -29,6 +29,7 @@ Switch between different display modes.
 | Command | Alias | Description |
 |---------|-------|-------------|
 | `screenshot` | `shot` | Takes a screenshot of the current menu view (Vertical or Horizontal) and downloads it as a PNG. |
+| `copymail` | `cp` | Generates and copies the email text to your clipboard. |
 
 ### 3. Menu Editing Commands
 

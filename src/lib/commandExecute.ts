@@ -1,6 +1,7 @@
 import { MealManager, Meal } from "$lib/MealManager";
 import { headers, dayAlias, FrontState } from "$lib/constants";
 import { toPng } from 'html-to-image';
+import { generateMailMenu } from "$lib/mailGenerator";
 
 export interface CommandContext {
     setLoading: (loading: boolean) => void;
@@ -57,6 +58,25 @@ export function executeCommand(command: string, context: CommandContext): { succ
         return {
             success: false,
             message: 'Generation feature is not available.'
+        };
+    }
+
+    if (normalizedCommand === 'copymail' || normalizedCommand === 'cp') {
+        const meals = manager.currentMenu.meals;
+        generateMailMenu(meals)
+            .then((text) => {
+                navigator.clipboard.writeText(text);
+                // We can't easily notify success back to the UI asynchronously from here
+                // without changing the contract, but console log helps debugging
+                console.log('Mail copied to clipboard');
+            })
+            .catch((err) => {
+                console.error('Failed to copy mail:', err);
+            });
+            
+        return {
+            success: true,
+            message: 'Surely copied mail to clipboard...'
         };
     }
 

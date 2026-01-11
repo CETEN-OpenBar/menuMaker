@@ -77,6 +77,7 @@ export function commandPaletteSuggestions(input: string) {
             'view-vertical',
             'view-horizontal',
             'view-mail',
+            'copymail',
             'screenshot',
             `${baseToken}-u-s <sandwich name>`,
             `${baseToken}-u-t <your text>`,
@@ -89,7 +90,7 @@ export function commandPaletteSuggestions(input: string) {
     const suggestions: string[] = [];
 
     if (!hasSpace) {
-        ['generate', 'gen', 'view-vertical', 'view-horizontal', 'view-mail', 'screenshot'].forEach((token) => {
+        ['generate', 'gen', 'view-vertical', 'view-horizontal', 'view-mail', 'copymail', 'cp', 'screenshot'].forEach((token) => {
             if (token.startsWith(normalized)) {
                 suggestions.push(token);
             }
