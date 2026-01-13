@@ -1,5 +1,5 @@
 <div class="p-3 flex h-1/3">
-    <img src="/Barbare.png" class="" alt="">
+    <img src="/logo.png" class="" alt="">
     <div class="flex flex-1 justify-center flex-col items-center">
         <h1 class="text-[#b77236] font-bold text-8xl mb-2 text-center w-full">
             Menu de la semaine

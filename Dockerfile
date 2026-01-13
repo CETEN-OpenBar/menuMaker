@@ -13,6 +13,9 @@ RUN bun install
 # Copy source code
 COPY . .
 
+# Generate SvelteKit types
+RUN bun x svelte-kit sync
+
 # Build the application
 RUN bun run build
 
