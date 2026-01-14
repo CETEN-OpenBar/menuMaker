@@ -170,7 +170,6 @@
                                 onmouseenter={() => {
                                     highlightIndex = index;
                                 }}
-                                aria-selected={highlightIndex === index}
                             >
                                 <span>{suggestion}</span>
                                 <span class="text-xs uppercase text-white/40">Enter</span>
