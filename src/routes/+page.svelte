@@ -35,6 +35,10 @@
         <MailPreview />
     {/if}
 
+    <p class="absolute top-5 text-lg left-5">
+        Press <strong>Ctrl + K</strong> to open the command palette.
+    </p>
+
     <CommandPalette 
         isOpen={isCommandPaletteOpen}
         onCommand={(command: string) => executeCommand(

@@ -180,22 +180,43 @@
                 </ul>
             {/if}
 
-            <div class="mt-4 border-t border-white/10 pt-3 text-xs text-slate-300">
-                <p class="font-semibold text-slate-200">Command format</p>
-                <p><code>&lt;day&gt;-&lt;zone&gt;-&lt;type&gt; &lt;value&gt;</code></p>
-                <p class="mt-1 text-slate-400">
-                    <span class="font-semibold">day</span>: mon, tue, wed, thu, fri, sat, sun, pub (French names also work)<br />
-                    <span class="font-semibold">zone</span>: <code>u</code> (upper), <code>l</code> (lower)<br />
-                    <span class="font-semibold">type</span>: <code>s</code> (sandwich), <code>t</code> (text), <code>clear</code> (empty field)
-                </p>
-                <p class="mt-2 text-slate-400">
-                    Examples:
-                    <span class="ml-2 block text-slate-300">mon-u-s Chicken Pesto</span>
-                    <span class="ml-2 block text-slate-300">fri-l-t Happy hour from 5pm</span>
-                    <span class="ml-2 block text-slate-300">wed-u-clear</span>
-                    <span class="ml-2 block text-slate-300">generate</span>
-                </p>
-                <p class="mt-2 text-slate-400">Use <kbd>Esc</kbd> to close, <kbd>↑</kbd>/<kbd>↓</kbd> to navigate suggestions.</p>
+            <div class="mt-4 border-t border-white/10 pt-3 text-xs text-slate-300 max-h-40 overflow-y-auto pr-2 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-white/20">
+                <div class="grid grid-cols-2 gap-x-4 gap-y-1">
+                    <div class="col-span-2 mb-1 font-semibold text-slate-200">Menu Editing</div>
+                    <div class="font-mono text-slate-400">&lt;day&gt;-&lt;zone&gt;-&lt;type&gt; &lt;val&gt;</div>
+                    <div class="text-slate-400">Set menu item</div>
+                    <div class="font-mono text-slate-400">&lt;day&gt;-&lt;zone&gt;-clear</div>
+                    <div class="text-slate-400">Clear menu item</div>
+
+                    <div class="font-mono text-slate-500">mon-u-s Alpin</div>
+                    <div class="text-slate-500">Ex: Monday upper sandwich</div>
+                    <div class="font-mono text-slate-500">fri-l-t C'est les vacances!</div>
+                    <div class="text-slate-500">Ex: Friday lower text</div>
+                    
+                    <div class="col-span-2 mb-1 mt-2 font-semibold text-slate-200">Values</div>
+                    <div class="text-slate-400 col-span-2">
+                        <span class="font-semibold text-orange-400">day</span>: mon, tue, wed, thu, fri, sat, sun, pub
+                    </div>
+                    <div class="text-slate-400 col-span-2">
+                        <span class="font-semibold text-orange-400">zone</span>: u (upper), l (lower)
+                    </div>
+                    <div class="text-slate-400 col-span-2">
+                        <span class="font-semibold text-orange-400">type</span>: s (sandwich), t (text)
+                    </div>
+
+                    <div class="col-span-2 mb-1 mt-2 font-semibold text-slate-200">Application Control</div>
+                    <div class="font-mono text-slate-400">view-v / view-h</div>
+                    <div class="text-slate-400">Vertical/Horizontal mode</div>
+
+                    <div class="font-mono text-slate-400">view-m</div>
+                    <div class="text-slate-400">Mail preview mode</div>
+
+                    <div class="font-mono text-slate-400">shot</div>
+                    <div class="text-slate-400">Take screenshot</div>
+
+                    <div class="font-mono text-slate-400">cp</div>
+                    <div class="text-slate-400">Copy mail to clipboard</div>
+                </div>
             </div>
         </div>
     </div>
