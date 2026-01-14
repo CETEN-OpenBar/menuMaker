@@ -1,6 +1,6 @@
-# TnBarRefact
+# MenuMaker
 
-A SvelteKit-based meal management and menu generation tool, designed to easily manage weekly sandwich menus, visualize them, and generate email notifications.
+A SvelteKit-based menu generation tool, designed to easily visualize weekly sandwich menus, and generate email text.
 
 ## Features
 
