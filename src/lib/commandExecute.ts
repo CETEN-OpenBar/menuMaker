@@ -97,8 +97,19 @@ export function executeCommand(command: string, context: CommandContext): { succ
                 }
             })
                 .then((dataUrl) => {
+                    let week = '';
+                    const now = new Date();
+                    const day = now.getDate();
+                    const month = now.getMonth() + 1;
+                    const year = now.getFullYear();
+                    const d = new Date(now);
+                    d.setDate(d.getDate() - (d.getDay() || 7) + 1);
+                    const fmt = (dt: Date) => `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, '0')}-${String(dt.getDate()).padStart(2, '0')}`;
+                    const mon = fmt(d);
+                    d.setDate(d.getDate() + 4);
+                    week = `${mon}_${String(d.getDate()).padStart(2, '0')}`;
                     const link = document.createElement('a');
-                    link.download = `menu-${context.currentState || 'view'}.png`;
+                    link.download = `menu-${context.currentState || 'view'}-${week}.png`;
                     link.href = dataUrl;
                     link.click();
                 })
